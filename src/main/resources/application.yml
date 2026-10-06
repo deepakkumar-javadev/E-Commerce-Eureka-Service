@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: ECOM-EUREKA-SERVER
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: always
+
+# Application Information
+info:
+  app:
+    name: ECOM-EUREKA-SERVER
+    description: Eureka Service Registry for Ecommerce Microservices
+    version: 1.0.0
